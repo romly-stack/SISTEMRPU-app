@@ -1,0 +1,531 @@
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+    --primary: #2c7da0;
+    --primary-dark: #1a4f6a;
+    --secondary: #61a5c2;
+    --success: #2a9d8f;
+    --warning: #e9c46a;
+    --danger: #e76f51;
+    --light: #f8f9fa;
+    --dark: #2d3436;
+    --shadow: 0 2px 12px rgba(0,0,0,0.1);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* ==================== RESET & BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    padding-top: 0;
+    padding-bottom: 80px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ==================== HEADER ==================== */
+.app-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    box-shadow: var(--shadow);
+}
+
+.app-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.app-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.app-subtitle {
+    font-size: 11px;
+    opacity: 0.8;
+    display: block;
+}
+
+/* ==================== STATUS BAR ==================== */
+.status-bar {
+    background: #2d3436;
+    color: white;
+    padding: 4px 0;
+    font-size: 12px;
+    position: sticky;
+    top: 70px;
+    z-index: 1049;
+}
+
+.status-badge {
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.status-online {
+    background: #2a9d8f;
+    color: white;
+}
+
+.status-offline {
+    background: #e76f51;
+    color: white;
+}
+
+.status-text {
+    opacity: 0.7;
+    font-size: 11px;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: calc(100vh - 140px);
+    box-shadow: var(--shadow);
+}
+
+/* ==================== TABS ==================== */
+.app-tabs {
+    background: white;
+    border-bottom: 2px solid #e9ecef;
+    position: sticky;
+    top: 105px;
+    z-index: 1048;
+}
+
+.app-tabs .nav-link {
+    color: #666;
+    border: none;
+    padding: 12px 8px;
+    font-weight: 500;
+    border-radius: 0;
+    transition: var(--transition);
+}
+
+.app-tabs .nav-link i {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.app-tabs .nav-link .tab-label {
+    font-size: 11px;
+}
+
+.app-tabs .nav-link.active {
+    color: var(--primary);
+    background: transparent;
+    border-bottom: 3px solid var(--primary);
+}
+
+.app-tabs .nav-link:hover {
+    color: var(--primary);
+}
+
+/* ==================== SUMMARY CARDS ==================== */
+.summary-card {
+    border: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.summary-card .card-body {
+    padding: 12px 16px;
+}
+
+.summary-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 4px 0 0;
+}
+
+.summary-card small {
+    opacity: 0.8;
+    font-size: 11px;
+}
+
+/* ==================== TABLE ==================== */
+.table-responsive {
+    border-radius: var(--radius);
+    overflow-x: auto;
+}
+
+#rekapTable {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+#rekapTable thead th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 8px 6px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#rekapTable tbody td {
+    padding: 6px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+#rekapTable tbody tr {
+    transition: var(--transition);
+}
+
+#rekapTable tbody tr:hover {
+    background: #e8f4fd !important;
+}
+
+#rekapTable .row-kontan {
+    background-color: #fff0f0 !important;
+}
+
+#rekapTable .row-kontan:hover {
+    background-color: #ffe0e0 !important;
+}
+
+/* ==================== BATCH ITEMS ==================== */
+.batch-item {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: var(--radius);
+    padding: 12px;
+    margin-bottom: 8px;
+    transition: var(--transition);
+    animation: slideIn 0.3s ease;
+}
+
+.batch-item:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.batch-item .item-index {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.batch-item .remove-btn {
+    color: var(--danger);
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 8px;
+    transition: var(--transition);
+}
+
+.batch-item .remove-btn:active {
+    transform: scale(0.8);
+}
+
+/* ==================== MASTER LIST ==================== */
+.master-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.master-list .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: var(--transition);
+}
+
+.master-list .list-item:hover {
+    background: #f8f9fa;
+}
+
+.master-list .list-item .delete-btn {
+    color: var(--danger);
+    background: none;
+    border: none;
+    font-size: 16px;
+    padding: 0 4px;
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.master-list .list-item .delete-btn:hover {
+    opacity: 1;
+}
+
+/* ==================== LOADING OVERLAY ==================== */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.loading-content {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    animation: pulse 1.5s ease infinite;
+}
+
+.loading-content h5 {
+    margin-top: 16px;
+    color: var(--primary);
+}
+
+/* ==================== FAB ==================== */
+.fab {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 24px;
+    box-shadow: 0 4px 16px rgba(44, 125, 160, 0.4);
+    transition: var(--transition);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fab:active {
+    transform: scale(0.9);
+}
+
+/* ==================== TOAST ==================== */
+.toast-container {
+    position: fixed;
+    top: 80px;
+    right: 16px;
+    z-index: 9999;
+    max-width: 350px;
+    width: 100%;
+}
+
+.toast-custom {
+    background: white;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    margin-bottom: 8px;
+    animation: slideInRight 0.3s ease;
+    border-left: 4px solid var(--primary);
+    font-size: 14px;
+}
+
+.toast-custom.success {
+    border-left-color: var(--success);
+}
+
+.toast-custom.error {
+    border-left-color: var(--danger);
+}
+
+.toast-custom.warning {
+    border-left-color: var(--warning);
+}
+
+.toast-custom.info {
+    border-left-color: var(--secondary);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 16px;
+    }
+    
+    .app-subtitle {
+        font-size: 10px;
+    }
+    
+    .app-logo {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .status-bar {
+        font-size: 10px;
+        padding: 2px 0;
+    }
+    
+    #rekapTable {
+        font-size: 11px;
+    }
+    
+    #rekapTable thead th,
+    #rekapTable tbody td {
+        padding: 4px;
+        font-size: 10px;
+    }
+    
+    .summary-card h3 {
+        font-size: 14px;
+    }
+    
+    .summary-card .card-body {
+        padding: 8px 12px;
+    }
+    
+    .tab-label {
+        display: none;
+    }
+    
+    .app-tabs .nav-link i {
+        font-size: 22px;
+    }
+    
+    .app-tabs .nav-link {
+        padding: 8px 4px;
+    }
+    
+    .fab {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        bottom: 80px;
+        right: 12px;
+    }
+    
+    .toast-container {
+        top: 70px;
+        right: 8px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 14px;
+    }
+    
+    .status-text {
+        font-size: 9px;
+    }
+    
+    .batch-item .row > div {
+        margin-bottom: 4px;
+    }
+}
+
+/* ==================== SELECT2 CUSTOM ==================== */
+.select2-container--default .select2-selection--single {
+    border-radius: var(--radius);
+    border: 2px solid #e0e0e0;
+    height: 38px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 34px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 34px;
+}
+
+.select2-dropdown {
+    border-radius: var(--radius);
+    border: 2px solid #e0e0e0;
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .app-header,
+    .status-bar,
+    .app-tabs,
+    .fab,
+    .toast-container,
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+    
+    .main-content {
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+    
+    .tab-pane {
+        display: block !important;
+    }
+    
+    #rekapTable thead th {
+        background: #333 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .summary-card {
+        border: 1px solid #ddd !important;
+    }
+}
